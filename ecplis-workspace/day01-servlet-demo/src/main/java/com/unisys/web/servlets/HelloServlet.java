@@ -15,31 +15,29 @@ public class HelloServlet implements Servlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		this.config = config;
 		System.out.println(">>> HelloServlet.init() called..");
 	}
 
 	@Override
 	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		System.out.println(">>> HelloServlet.service() called..");
-		
-		// MIME 
+
+		// MIME
 		response.setContentType("text/html");
-		
+
 		PrintWriter out = response.getWriter();
-		
+
 		out.println("<h1>Hello, world!</h1>");
 		out.println("<hr>");
 		out.println("<p>Powered by Servlet 4.x</p>");
-		
+
 		out.close();
 	}
-	
+
 	@Override
 	public void destroy() {
 		System.out.println(">>> HelloServlet.destroy() called..");
 	}
-
 
 	@Override
 	public ServletConfig getServletConfig() {
@@ -50,6 +48,5 @@ public class HelloServlet implements Servlet {
 	public String getServletInfo() {
 		return "HelloServlet, responds to the user with a greeting.";
 	}
-
 
 }

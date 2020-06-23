@@ -11,6 +11,13 @@
 	<servlet>
 		<servlet-name>s1</servlet-name>
 		<servlet-class>com.unisys.web.servlets.HelloServlet</servlet-class>
+		
+		<init-param>
+			<param-name>bgcolor</param-name>
+			<param-value>#ff00ae</param-value>
+		</init-param>
+		
+		
 		<load-on-startup>100</load-on-startup>
 	</servlet>
 	
