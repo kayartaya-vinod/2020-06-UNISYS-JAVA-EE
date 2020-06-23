@@ -25,6 +25,8 @@ public class StoreNameAsCookieServlet extends HttpServlet {
 			c1.setMaxAge(60*60*24*365*20);
 			// c1.setSecure(true); // SSL required
 			resp.addCookie(c1);
+			// adds a new HTTP Response header called "Set-Cookie" with all the cookie details
+			// eg. Set-Cookie: name1592892387417=Ramesh; Max-Age=630720000; Expires=Mon, 18-Jun-2040 06:06:27 GMT
 		}
 		
 		resp.setContentType("text/html");
