@@ -3,6 +3,7 @@ package com.unisys.web.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,7 +44,10 @@ public class MultiplicationTableServlet extends HttpServlet {
 			}
 		}
 		
-		out.println("<h1>Mutliplication table for " + num + "</h1>");
+		RequestDispatcher rd = req.getRequestDispatcher("table.html");
+		rd.include(req, resp); // rd.forward --> closes the response (and it's output stream)
+		
+		out.println("<p>Mutliplication table for " + num + "</p>");
 		out.println("<hr>");
 	
 		for(var i=1; i<=limit; i++) {
