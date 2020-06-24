@@ -23,6 +23,8 @@ public class StoreNameInSessionServlet extends HttpServlet {
 		if (name != null && name.trim().length() > 0) {
 			
 			HttpSession session = req.getSession();
+			System.out.println("session is of type: " + session.getClass());
+			
 			// req.getSession() --> checks for a cookie in the request called "JSESSIONID"
 			// if found, then there is already a session associated with the user; retrieve the same
 			// if not found, then create a new session object (using the API of the implementer); return the same
