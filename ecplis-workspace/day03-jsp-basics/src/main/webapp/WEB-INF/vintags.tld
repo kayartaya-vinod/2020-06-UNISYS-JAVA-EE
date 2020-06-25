@@ -13,10 +13,12 @@
 	<tag>
 		<name>include</name>
 		<tag-class>com.unisys.web.tags.IncludeTag</tag-class>
+		<description>Include the content of a file as a bulletted or numbered list</description>
 
 		<attribute>
 			<name>type</name>
 			<required>false</required>
+			<description>Represents the kind of list you want. Possible values are "ol" (default) and "ul"</description>
 		</attribute>
 
 		<attribute>
