@@ -1,6 +1,8 @@
 package com.unisys.web.servlets;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,6 +46,30 @@ public class ELDemoServlet extends HttpServlet {
 		Customer c1 = new Customer(1, "Vinod Kumar", "vinod@vinod.co", "9731424784", "Bangalore");
 		req.setAttribute("customer", c1);
 		
+		List<Customer> list = Arrays.asList(
+				new Customer(1, "Vinod Kumar", "vinod@vinod.co", "9731424784", "Bangalore"),
+				new Customer(2, "Shyam", "shyam@exmaple.com", "928272722", "Bangalore"),
+				new Customer(3, "John", "john@xmpl.com", "5554443333", "Dallas"),
+				new Customer(4, "Jane", "jane@xmpl.com", "5554443222", "Newyork")
+				);
+		req.setAttribute("customerList", list);
+		
 		req.getRequestDispatcher("/WEB-INF/views/el-demo.jsp").forward(req, resp);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

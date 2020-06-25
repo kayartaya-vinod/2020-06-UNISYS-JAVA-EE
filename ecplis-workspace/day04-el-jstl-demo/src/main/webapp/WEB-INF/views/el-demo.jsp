@@ -42,5 +42,34 @@
 <h3>Session.count = ${sessionScope.count}</h3>
 <h3>Application.count = ${applicationScope.count}</h3>
 
+<hr>
+<h3>There are ${ customerList.size() } customers</h3>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<ul>
+	<c:forEach items="${customerList}" var="c1">
+	<li>${c1.name}</li>
+	</c:forEach>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
