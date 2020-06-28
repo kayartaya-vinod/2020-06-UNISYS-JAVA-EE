@@ -6,6 +6,9 @@ import javax.ejb.Stateless;
 
 @Stateless
 public class HelloServiceBean implements HelloService {
+	
+	public HelloServiceBean() {
+	}
 
 	@Override
 	public String getGreetingMessage(String name) {
