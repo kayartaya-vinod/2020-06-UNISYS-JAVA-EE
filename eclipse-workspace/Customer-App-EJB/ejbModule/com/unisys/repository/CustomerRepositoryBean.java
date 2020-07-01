@@ -34,18 +34,26 @@ public class CustomerRepositoryBean implements CustomerRepository {
 
 	@Override
 	public Customer getByEmail(String email) {
-		String ql = "from Customer where email=?1";
-		TypedQuery<Customer> qry = em.createQuery(ql, Customer.class);
-		qry.setParameter(1, email);
-		return qry.getSingleResult();
+		try {
+			String ql = "from Customer where email=?1";
+			TypedQuery<Customer> qry = em.createQuery(ql, Customer.class);
+			qry.setParameter(1, email);
+			return qry.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	@Override
 	public Customer getByPhone(String phone) {
-		String ql = "from Customer where phone=?1";
-		TypedQuery<Customer> qry = em.createQuery(ql, Customer.class);
-		qry.setParameter(1, phone);
-		return qry.getSingleResult();
+		try {
+			String ql = "from Customer where phone=?1";
+			TypedQuery<Customer> qry = em.createQuery(ql, Customer.class);
+			qry.setParameter(1, phone);
+			return qry.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 }

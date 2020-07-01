@@ -16,6 +16,7 @@ public class ViewNamesFromSessionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 6121003005427518221L;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

@@ -1,5 +1,6 @@
 package com.unisys.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +28,10 @@ public class CustomerServiceBean implements CustomerService {
 	}
 
 	@Override
-	public void addNewCustomer(Customer customer, Map<String, String> errors) {
+	public Map<String, String> addNewCustomer(Customer customer) {
+
+		Map<String, String> errors = new HashMap<>();
+
 		// business logic value addition:
 		// 0. check for all mandatory fields
 		String name = customer.getName();
@@ -39,24 +43,25 @@ public class CustomerServiceBean implements CustomerService {
 		}
 		if (email == null || email.trim().length() == 0) {
 			errors.put("email", "Email is mandatory");
+		} else if (repo.getByEmail(email) != null) {
+			// 1. check if there is already a customer with the given email
+			errors.put("email", "A customer with this email address aready exists in our database.");
 		}
+
 		if (phone == null || phone.trim().length() == 0) {
 			errors.put("phone", "Phone is mandatory");
+		} else if (repo.getByPhone(phone) != null) {
+			// 2. check if there is already a customer with the given phone
+			errors.put("phone", "A customer with this phone number aready exists in our database.");
 		}
-		// 1. check if there is already a customer with the given email
-		if (repo.getByEmail(email) != null) {
-			errors.put("email", "This is email is already registered");
-		}
-		// 2. check if there is already a customer with the given phone
-		if (repo.getByPhone(phone) != null) {
-			errors.put("phone", "This is phone is already registered");
-		}
-		
-		if(errors.size()>0) return;
-		
+
+		if (errors.size() > 0)
+			return errors;
+
 		// 4. add the new customer
 		Customer c = repo.addCustomer(customer);
 		customer.setId(c.getId());
+		return null;
 	}
 
 }

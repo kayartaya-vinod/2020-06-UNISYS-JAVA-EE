@@ -14,5 +14,5 @@ public interface CustomerService {
 	
 	public Customer getCustomer(Integer id);
 	
-	public void addNewCustomer(Customer customer, Map<String, String> errors);
+	public Map<String, String> addNewCustomer(Customer customer);
 }

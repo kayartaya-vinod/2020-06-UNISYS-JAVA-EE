@@ -1,11 +1,8 @@
 package com.unisys.web.controllers;
 
 import java.io.IOException;
-import java.util.Properties;
 
 import javax.ejb.EJB;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,14 +29,7 @@ public class ViewCustomersServlet extends HttpServlet {
 		super.init();
 		try {
 			if(service==null) {
-				// no dependency injection done
-				// manually get a proxy for service reference
-				Properties props = new Properties();
-				props.setProperty(Context.INITIAL_CONTEXT_FACTORY, "org.wildfly.naming.client.WildFlyInitialContextFactory");
-				props.setProperty(Context.PROVIDER_URL, "http-remoting://localhost:8080");
-				// create a JNDI context object using the above information
-				Context ctx = new InitialContext(props);
-				this.service = (CustomerService) ctx.lookup("ejb:/Customer-App-EJB/CustomerServiceBean!com.unisys.service.CustomerService");
+				this.service = (CustomerService) this.getServletContext().getAttribute("customerService"); 
 			}
 		} catch (Exception e) {
 			throw new ServletException(e);

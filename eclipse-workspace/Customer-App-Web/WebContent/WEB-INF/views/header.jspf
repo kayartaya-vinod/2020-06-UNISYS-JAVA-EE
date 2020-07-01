@@ -16,10 +16,10 @@
 		</div>
 	</div>
 	
-	<div class="container" style="min-height: 450px;">
+	<div class="container" style="min-height: 500px;">
 	
 	<a href="./">Home</a> | 
 	<a href="./view-customers">View customers</a> |
 	<a href="./add-new-customer">Add new customer</a>
 	
-	<hr>
+	<br><br><br>

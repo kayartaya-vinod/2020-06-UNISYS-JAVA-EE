@@ -17,6 +17,7 @@ public class StoreNameInSessionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 3812311572548330184L;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String name = req.getParameter("name");
