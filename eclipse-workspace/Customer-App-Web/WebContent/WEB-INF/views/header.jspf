@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MVC using Servlets/JSP/EJB/JPA</title>
+<link rel="stylesheet"
+	href="https://bootswatch.com/4/yeti/bootstrap.min.css" type="text/css">
+</head>
+<body>
+	
+	<div class="alert alert-primary">
+		<div class="container">
+			<h1>MVC using Servlets/JSP/EJB/JPA</h1>
+		</div>
+	</div>
+	
+	<div class="container" style="min-height: 450px;">
+	
+	<a href="./">Home</a> | 
+	<a href="./view-customers">View customers</a> |
+	<a href="./add-new-customer">Add new customer</a>
+	
+	<hr>

@@ -5,12 +5,14 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import com.unisys.entity.Customer;
 
 @Stateless
 public class CustomerRepositoryBean implements CustomerRepository {
-	
+
+	// dependency injection only for injecting EntityManager
 	@PersistenceContext(unitName = "Training-PU")
 	private EntityManager em;
 
@@ -28,6 +30,22 @@ public class CustomerRepositoryBean implements CustomerRepository {
 	@Override
 	public List<Customer> getAllCustomers() {
 		return em.createQuery("from Customer", Customer.class).getResultList();
+	}
+
+	@Override
+	public Customer getByEmail(String email) {
+		String ql = "from Customer where email=?1";
+		TypedQuery<Customer> qry = em.createQuery(ql, Customer.class);
+		qry.setParameter(1, email);
+		return qry.getSingleResult();
+	}
+
+	@Override
+	public Customer getByPhone(String phone) {
+		String ql = "from Customer where phone=?1";
+		TypedQuery<Customer> qry = em.createQuery(ql, Customer.class);
+		qry.setParameter(1, phone);
+		return qry.getSingleResult();
 	}
 
 }
