@@ -13,6 +13,7 @@ import com.unisys.repository.CustomerRepository;
 @Stateless
 public class CustomerServiceBean implements CustomerService {
 
+	
 	// Dependency injection only for EJB proxies
 	@EJB
 	CustomerRepository repo;

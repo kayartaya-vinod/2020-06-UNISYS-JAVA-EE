@@ -11,7 +11,7 @@
 		<label class="col-md-3 text-right" for="name">Name :</label>
 		<div class="col-md-6">
 			<input type="text" name="name" id="name" class="form-control" value="${param.name}" >
-			<div class="text-danger">${errors.name}</div>
+			<div class="text-danger">${requestScope.errors.name}</div>
 		</div>
 	</div>
 

@@ -8,7 +8,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="lib" path="/Users/vinodkumar/Desktop/wildfly-19.1.0.Final/bin/client/jboss-client.jar">
+	<classpathentry kind="lib" path="/Users/vinodkumar/Desktop/wildfly-19.1.0.Final/bin/client/jboss-client.jar" sourcepath="/Users/vinodkumar/.m2/repository/org/wildfly/wildfly-client-all/19.1.0.Final/wildfly-client-all-19.1.0.Final-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
