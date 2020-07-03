@@ -3,14 +3,14 @@ package com.unisys.entity;
 import com.unisys.annotations.Csv;
 import com.unisys.annotations.Include;
 
-@Csv
+@Csv(usePropertyNamesAsHeader = false)
 public class Person {
 
 	@Include
-	public String name;
+	private String name;
 	@Include
-	public String email;
-	public String phone;
+	private String email;
+	private String phone;
 
 	public Person() {
 	}

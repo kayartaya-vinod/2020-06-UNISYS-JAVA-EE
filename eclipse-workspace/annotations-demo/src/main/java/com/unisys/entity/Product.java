@@ -7,13 +7,13 @@ import com.unisys.annotations.Include;
 public class Product {
 
 	@Include
-	public int id;
+	private int id;
 	@Include
-	public String name;
+	private String name;
 	@Include
-	public double unitPrice;
+	private double unitPrice;
 	@Include
-	public int unitsInStock;
+	private int unitsInStock;
 
 	public Product() {
 	}
